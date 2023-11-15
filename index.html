@@ -13,18 +13,52 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <h1>Library</h1>
-    <table>
-      <thead>
-        <th>№</th>
-        <th>Title</th>
-        <th>Author</th>
-        <th>Pages</th>
-        <th>Read</th>
-      </thead>
-      <tbody></tbody>
-    </table>
-    <button>Add new book</button>
+    <div class="header">
+      <h1>Library</h1>
+      <button id="showDialog">Add new book</button>
+      <dialog id="dialog">
+        <form>
+          <p>
+            <label>Title: <input type="text" name="Title" id="Title" /></label>
+          </p>
+          <p>
+            <label
+              >Author: <input type="text" name="Author" id="Author"
+            /></label>
+          </p>
+          <p>
+            <label
+              >Number of pages:
+              <input type="text" name="NumberOfPages" id="NumberOfPages"
+            /></label>
+          </p>
+          <p>
+            <label
+              >Read status: <input type="checkbox" name="Read" id="Read"
+            /></label>
+          </p>
+          <div>
+            <button value="cancel" formmethod="dialog">Cancel</button>
+            <button id="confirmBtn" value="default">Confirm</button>
+          </div>
+        </form>
+      </dialog>
+    </div>
+    <div class="main">
+      <table>
+        <thead>
+          <th>№</th>
+          <th>Title</th>
+          <th>Author</th>
+          <th>Pages</th>
+          <th>Read</th>
+        </thead>
+        <tbody></tbody>
+      </table>
+      <output></output>
+    </div>
+    <div class="bottom">Copyright blah blah</div>
+
     <script src="script.js" async defer></script>
   </body>
 </html>

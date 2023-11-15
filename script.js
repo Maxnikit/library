@@ -27,6 +27,17 @@ function addBookToLibrary() {
 }
 const bookInput = new Book("Chimera", "AUTHOR", "321", "true", "1");
 const table = document.querySelector("table");
-const button = document.querySelector("button");
-button.onclick = addBookToLibrary();
+// button.onclick = addBookToLibrary();
 // TODO add form to get bookInput from user
+const showButton = document.getElementById("showDialog");
+const dialog = document.querySelector("dialog");
+const outputBox = document.getElementById("output");
+const confirmBtn = dialog.querySelector("#confirmBtn");
+
+showButton.addEventListener("click", () => {
+  dialog.showModal();
+});
+confirmBtn.addEventListener("click", (event) => {
+  event.preventDefault(); // We don't want to submit this fake form
+  dialog.close(); // Have to send the select box value here.
+});
