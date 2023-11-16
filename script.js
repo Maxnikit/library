@@ -43,7 +43,6 @@ function submitForm() {
 }
 
 const table = document.querySelector("table");
-// TODO add form to get bookInput from user
 const showDialog = document.getElementById("showDialog");
 const dialog = document.querySelector("dialog");
 const outputBox = document.getElementById("output");
