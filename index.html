@@ -13,36 +13,41 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div class="header">
-      <h1>Library</h1>
-      <button id="showDialog">Add new book</button>
-      <dialog id="dialog">
-        <form>
-          <p>
-            <label>Title: <input type="text" name="Title" id="Title" /></label>
-          </p>
-          <p>
-            <label
-              >Author: <input type="text" name="Author" id="Author"
-            /></label>
-          </p>
-          <p>
-            <label
-              >Number of pages:
-              <input type="text" name="NumberOfPages" id="NumberOfPages"
-            /></label>
-          </p>
-          <p>
-            <label
-              >Read status: <input type="checkbox" name="Read" id="Read"
-            /></label>
-          </p>
-          <div>
-            <button value="cancel" formmethod="dialog">Cancel</button>
-            <button id="confirmBtn" value="default">Confirm</button>
-          </div>
-        </form>
-      </dialog>
+    <div id="header">
+      <div id="headerContent">
+        <h1>Library</h1>
+        <button id="showDialog">Add new book</button>
+        <dialog id="dialog">
+          <form>
+            <p>
+              <label
+                >Title: <input type="text" name="title" id="title"
+              /></label>
+            </p>
+            <p>
+              <label
+                >Author: <input type="text" name="author" id="author"
+              /></label>
+            </p>
+            <p>
+              <label
+                >Number of pages:
+                <input type="text" name="numberOfPages" id="numberOfPages"
+              /></label>
+            </p>
+            <p>
+              <label
+                >Read status:
+                <input type="checkbox" value="true" name="read" id="read"
+              /></label>
+            </p>
+            <div>
+              <button value="cancel" formmethod="dialog">Cancel</button>
+              <button id="confirmBtn" value="default">Confirm</button>
+            </div>
+          </form>
+        </dialog>
+      </div>
     </div>
     <div class="main">
       <table>
