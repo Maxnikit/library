@@ -78,3 +78,4 @@ dialog.addEventListener("keydown", (event) => {
     submitForm();
   }
 });
+// TODO add edit and remove buttons, make pages and read columns smaller
