@@ -16,33 +16,42 @@
     <div id="header">
       <div id="headerContent">
         <h1>Library</h1>
+
         <button id="showDialog">Add new book</button>
         <dialog id="dialog">
+          <div class="dialog-title">Adding new book to library</div>
           <form>
             <p>
-              <label
-                >Title: <input type="text" name="title" id="title"
-              /></label>
+              <label for="title">Title: </label
+              ><input
+                type="text"
+                name="title"
+                id="title"
+                required
+                maxlength="5"
+              />
             </p>
             <p>
-              <label
-                >Author: <input type="text" name="author" id="author"
-              /></label>
+              <label>Author: </label
+              ><input type="text" name="author" id="author" required />
             </p>
             <p>
-              <label
-                >Number of pages:
-                <input type="text" name="numberOfPages" id="numberOfPages"
-              /></label>
+              <label>Number of pages: </label
+              ><input
+                type="text"
+                name="numberOfPages"
+                id="numberOfPages"
+                required
+              />
             </p>
             <p>
-              <label
-                >Read status:
-                <input type="checkbox" value="true" name="read" id="read"
-              /></label>
+              <label>Read status: </label
+              ><input type="checkbox" value="true" name="read" id="read" />
             </p>
             <div>
-              <button value="cancel" formmethod="dialog">Cancel</button>
+              <button id="cancelBtn" value="cancel" formmethod="dialog">
+                Cancel
+              </button>
               <button id="confirmBtn" value="default">Confirm</button>
             </div>
           </form>
@@ -62,7 +71,7 @@
       </table>
       <output></output>
     </div>
-    <div class="bottom">Copyright blah blah</div>
+    <div class="footer">Made with ❤ by Maxnikit</div>
 
     <script src="script.js" async defer></script>
   </body>

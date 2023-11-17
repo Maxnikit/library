@@ -28,6 +28,11 @@ function addBookToLibrary() {
   addRow();
 }
 function submitForm() {
+  if (!form.checkValidity()) {
+    alert("Please enter data in all fields");
+    return;
+  }
+  dialog.close();
   let title = document.getElementById("title").value;
   let author = document.getElementById("author").value;
   let pages = document.getElementById("numberOfPages").value;
@@ -45,13 +50,31 @@ function submitForm() {
 const table = document.querySelector("table");
 const showDialog = document.getElementById("showDialog");
 const dialog = document.querySelector("dialog");
+const form = document.querySelector("form");
 const outputBox = document.getElementById("output");
 const confirmBtn = dialog.querySelector("#confirmBtn");
+const overlay = document.createElement("div");
+
 showDialog.addEventListener("click", () => {
+  overlay.classList.add("overlay");
+  document.body.appendChild(overlay);
+  overlay.style.display = "block";
   dialog.showModal();
 });
+dialog.onclose = () => {
+  document.getElementById("title").value = "";
+  document.getElementById("author").value = "";
+  document.getElementById("numberOfPages").value = "";
+  document.getElementById("read").checked = false;
+  document.body.removeChild(overlay);
+};
 confirmBtn.addEventListener("click", (event) => {
   event.preventDefault(); // We don't want to submit this fake form
-  dialog.close(); // Have to send the select box value here.
   submitForm(); // Submit
+});
+dialog.addEventListener("keydown", (event) => {
+  if (event.key === "Enter") {
+    event.preventDefault();
+    submitForm();
+  }
 });
