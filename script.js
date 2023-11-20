@@ -29,6 +29,7 @@ function addRow(bookInput) {
   img.src = "delete.svg";
   img.height = "40";
   img.width = "40";
+  img.color = "white";
   btn.appendChild(img);
   c6.appendChild(btn);
 }

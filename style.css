@@ -119,6 +119,12 @@ thead th {
 .deleteBtn {
   cursor: pointer;
   border: none;
-  color: white;
+
   padding: 0;
+}
+
+/* ? Why is color changing is not working on this img? */
+/* TODO Change color of button to white */
+img {
+  fill: white !important;
 }
