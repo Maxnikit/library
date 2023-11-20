@@ -13,6 +13,7 @@ function addRow(bookInput) {
   let c3 = row.insertCell(2);
   let c4 = row.insertCell(3);
   let c5 = row.insertCell(4);
+  let c6 = row.insertCell(5);
   c2.innerText = bookInput.title;
   c3.innerText = bookInput.author;
   c4.innerText = bookInput.pages;
@@ -21,7 +22,15 @@ function addRow(bookInput) {
   } else {
     c5.innerText = "X";
   }
-  // c5.innerText = bookInput.read;
+  let btn = document.createElement("button");
+  btn.type = "image";
+  btn.className = "deleteBtn";
+  let img = document.createElement("img");
+  img.src = "delete.svg";
+  img.height = "40";
+  img.width = "40";
+  btn.appendChild(img);
+  c6.appendChild(btn);
 }
 
 function addBookToLibrary() {
@@ -37,22 +46,18 @@ function submitForm() {
   let author = document.getElementById("author").value;
   let pages = document.getElementById("numberOfPages").value;
   let read = document.getElementById("read").checked;
-  let bookInput = {
-    title: title,
-    author: author,
-    pages: pages,
-    read: read,
-  };
-  console.log(bookInput);
-  addRow(bookInput);
+  let bookInput = new Book(title, author, pages, read);
+  myLibrary.push(bookInput);
+  addBook();
 }
 
-const table = document.querySelector("table");
+const table = document.querySelector("tbody");
 const showDialog = document.getElementById("showDialog");
 const dialog = document.querySelector("dialog");
 const form = document.querySelector("form");
 const outputBox = document.getElementById("output");
 const confirmBtn = dialog.querySelector("#confirmBtn");
+const cancelBtn = dialog.querySelector("#cancelBtn");
 const overlay = document.createElement("div");
 
 showDialog.addEventListener("click", () => {
@@ -72,10 +77,30 @@ confirmBtn.addEventListener("click", (event) => {
   event.preventDefault(); // We don't want to submit this fake form
   submitForm(); // Submit
 });
+cancelBtn.addEventListener("click", (event) => {
+  event.preventDefault(); // We don't want to submit this fake form
+  dialog.close(); // Close the dialog
+});
 dialog.addEventListener("keydown", (event) => {
   if (event.key === "Enter") {
     event.preventDefault();
     submitForm();
   }
 });
-// TODO add edit and remove buttons, make pages and read columns smaller
+function addBook() {
+  table.innerHTML = "";
+  for (let index = 0; index < myLibrary.length; index++) {
+    const book = myLibrary[index];
+    addRow(book);
+  }
+}
+const rows = document.querySelector("table")?.rows;
+
+Array.from(table).forEach((row) => {
+  console.log(row);
+  const cells = Array.from(row.cells);
+  cells.forEach((cell) => {
+    console.log(cell);
+  });
+});
+// TODO assign index to DELETE buttons, make it so buttons can delete entries from myLibrary array
