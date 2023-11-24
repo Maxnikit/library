@@ -17,7 +17,7 @@
       <div id="headerContent">
         <h1>Library</h1>
 
-        <button id="showDialog">Add new book</button>
+        <button id="showDialog" class="button">Add new book</button>
         <dialog id="dialog">
           <div class="dialog-title">Adding new book to library</div>
           <form>
@@ -43,8 +43,15 @@
               ><input type="checkbox" value="true" name="read" id="read" />
             </p>
             <div>
-              <button id="cancelBtn" value="cancel">Cancel</button>
-              <button id="confirmBtn" value="default" formmethod="dialog">
+              <button id="cancelBtn" class="button" value="cancel">
+                Cancel
+              </button>
+              <button
+                id="confirmBtn"
+                class="button"
+                value="default"
+                formmethod="dialog"
+              >
                 Confirm
               </button>
             </div>

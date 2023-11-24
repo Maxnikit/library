@@ -17,14 +17,36 @@ body {
 .footer {
   margin-top: auto;
 }
-button {
-  background-color: #d97163;
+.button {
+  /* background-color: #d97163; */
+  background-color: #c1402f;
+
   font-size: 18px;
   border-radius: 10px;
   padding: 10px;
   font-weight: bold;
   color: white;
 }
+.button {
+  user-select: none;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition-duration: 0.4s;
+  -webkit-transition-duration: 0.4s; /* Safari */
+}
+.button:hover {
+  transition-duration: 0.1s;
+  background-color: #d45e4e;
+}
+
+.button:active {
+  top: 1px;
+}
+table button {
+  background-color: #d97163;
+}
+/*  */
 #cancelBtn {
   background-color: #a1e0e8;
   color: black;

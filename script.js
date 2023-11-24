@@ -14,6 +14,21 @@ function addBook() {
     const book = myLibrary[index];
     addRow(book);
   }
+  const tableRows = document.querySelectorAll("tbody tr");
+
+  // Применяем стили к каждой строке с анимацией transition
+  tableRows.forEach((row, index) => {
+    row.style.transition = `opacity 0.4s ${index * 0.1}s`;
+    row.style.opacity = "0";
+  });
+
+  // Задержка перед применением анимации
+  setTimeout(() => {
+    // Применяем анимацию появления для каждой строки
+    tableRows.forEach((row) => {
+      row.style.opacity = "1";
+    });
+  }, 50);
 }
 function addRow(bookInput) {
   const row = table.insertRow(-1);
