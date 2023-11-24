@@ -95,13 +95,4 @@ function addBook() {
     addRow(book);
   }
 }
-const rows = document.querySelector("table")?.rows;
-
-Array.from(table).forEach((row) => {
-  console.log(row);
-  const cells = Array.from(row.cells);
-  cells.forEach((cell) => {
-    console.log(cell);
-  });
-});
 // TODO assign index to DELETE buttons, make it so buttons can delete entries from myLibrary array
