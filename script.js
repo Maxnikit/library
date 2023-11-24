@@ -24,7 +24,8 @@ function addRow(bookInput) {
   titleCell.textContent = bookInput.title;
   authorCell.textContent = bookInput.author;
   pagesCell.textContent = bookInput.pages;
-  readCell.textContent = bookInput.read ? "✓" : "X";
+  const readBtn = createReadBtn(bookInput.read);
+  readCell.appendChild(readBtn);
 
   const deleteBtn = createDeleteBtn(deleteIndex);
   deleteIndex += 1;
@@ -37,11 +38,7 @@ function createDeleteBtn(index) {
   btn.className = "deleteBtn";
 
   const img = document.createElement("img");
-  img.src = "delete.svg";
-  img.height = "40";
-  img.width = "40";
-  img.color = "white";
-
+  img.src = "delete1.png";
   btn.appendChild(img);
 
   btn.addEventListener("click", () => {
@@ -51,7 +48,22 @@ function createDeleteBtn(index) {
 
   return btn;
 }
+function createReadBtn(readBoolean) {
+  const btn = document.createElement("button");
+  btn.type = "image";
+  btn.className = "readBtn";
 
+  const img = document.createElement("img");
+  img.src = readBoolean ? "check1.png" : "uncheck1.png";
+  btn.appendChild(img);
+  btn.addEventListener("click", () => {
+    console.log(img.src);
+    console.log(img.src === "uncheck1.png");
+    readBoolean = !readBoolean;
+    img.src = readBoolean ? "check1.png" : "uncheck1.png";
+  });
+  return btn;
+}
 function submitForm() {
   if (!form.checkValidity()) {
     alert("Please enter data in all fields");
