@@ -1,54 +1,73 @@
 const myLibrary = [];
-
+let deleteIndex = 0;
 function Book(title, author, pages, read) {
   this.title = title;
   this.author = author;
   this.pages = pages;
   this.read = read;
 }
-function addRow(bookInput) {
-  let row = table.insertRow(-1);
-  let c1 = row.insertCell(0);
-  let c2 = row.insertCell(1);
-  let c3 = row.insertCell(2);
-  let c4 = row.insertCell(3);
-  let c5 = row.insertCell(4);
-  let c6 = row.insertCell(5);
-  c2.innerText = bookInput.title;
-  c3.innerText = bookInput.author;
-  c4.innerText = bookInput.pages;
-  if (bookInput.read === true) {
-    c5.innerText = "✓";
-  } else {
-    c5.innerText = "X";
+function addBook() {
+  table.innerHTML = "";
+  deleteIndex = 0;
+
+  for (let index = 0; index < myLibrary.length; index++) {
+    const book = myLibrary[index];
+    addRow(book);
   }
-  let btn = document.createElement("button");
+}
+function addRow(bookInput) {
+  const row = table.insertRow(-1);
+  const cells = Array.from({ length: 6 }, () => row.insertCell());
+  const [numberCell, titleCell, authorCell, pagesCell, readCell, deleteCell] =
+    cells; // numberCell не удалять, он нужен для нумерации строчек, которая работает через css
+
+  titleCell.textContent = bookInput.title;
+  authorCell.textContent = bookInput.author;
+  pagesCell.textContent = bookInput.pages;
+  readCell.textContent = bookInput.read ? "✓" : "X";
+
+  const deleteBtn = createDeleteBtn(deleteIndex);
+  deleteIndex += 1;
+  deleteCell.appendChild(deleteBtn);
+}
+
+function createDeleteBtn(index) {
+  const btn = document.createElement("button");
   btn.type = "image";
   btn.className = "deleteBtn";
-  let img = document.createElement("img");
+
+  const img = document.createElement("img");
   img.src = "delete.svg";
   img.height = "40";
   img.width = "40";
   img.color = "white";
+
   btn.appendChild(img);
-  c6.appendChild(btn);
+
+  btn.addEventListener("click", () => {
+    myLibrary.splice(index, 1);
+    addBook();
+  });
+
+  return btn;
 }
 
-function addBookToLibrary() {
-  addRow();
-}
 function submitForm() {
   if (!form.checkValidity()) {
     alert("Please enter data in all fields");
     return;
   }
+
   dialog.close();
-  let title = document.getElementById("title").value;
-  let author = document.getElementById("author").value;
-  let pages = document.getElementById("numberOfPages").value;
-  let read = document.getElementById("read").checked;
-  let bookInput = new Book(title, author, pages, read);
-  myLibrary.push(bookInput);
+
+  const titleInput = document.getElementById("title").value;
+  const authorInput = document.getElementById("author").value;
+  const pagesInput = document.getElementById("numberOfPages").value;
+  const readInput = document.getElementById("read").checked;
+
+  const newBook = new Book(titleInput, authorInput, pagesInput, readInput);
+  myLibrary.push(newBook);
+
   addBook();
 }
 
@@ -88,11 +107,3 @@ dialog.addEventListener("keydown", (event) => {
     submitForm();
   }
 });
-function addBook() {
-  table.innerHTML = "";
-  for (let index = 0; index < myLibrary.length; index++) {
-    const book = myLibrary[index];
-    addRow(book);
-  }
-}
-// TODO assign index to DELETE buttons, make it so buttons can delete entries from myLibrary array
