@@ -38,7 +38,7 @@ function createDeleteBtn(index) {
   btn.className = "deleteBtn";
 
   const img = document.createElement("img");
-  img.src = "delete1.png";
+  img.src = "icons/delete1.png";
   btn.appendChild(img);
 
   btn.addEventListener("click", () => {
@@ -54,13 +54,13 @@ function createReadBtn(readBoolean) {
   btn.className = "readBtn";
 
   const img = document.createElement("img");
-  img.src = readBoolean ? "check1.png" : "uncheck1.png";
+  img.src = readBoolean ? "icons/check1.png" : "icons/uncheck1.png";
   btn.appendChild(img);
   btn.addEventListener("click", () => {
     console.log(img.src);
-    console.log(img.src === "uncheck1.png");
+    console.log(img.src === "icons/uncheck1.png");
     readBoolean = !readBoolean;
-    img.src = readBoolean ? "check1.png" : "uncheck1.png";
+    img.src = readBoolean ? "icons/check1.png" : "icons/uncheck1.png";
   });
   return btn;
 }
