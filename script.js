@@ -1,50 +1,53 @@
 const myLibrary = [];
 let deleteIndex = 0;
-function Book(title, author, pages, read) {
-  this.title = title;
-  this.author = author;
-  this.pages = pages;
-  this.read = read;
-}
-function addBook() {
-  table.innerHTML = "";
-  deleteIndex = 0;
 
-  for (let index = 0; index < myLibrary.length; index++) {
-    const book = myLibrary[index];
-    addRow(book);
+class Book {
+  constructor(title, author, pages, read) {
+    this.title = title;
+    this.author = author;
+    this.pages = pages;
+    this.read = read;
   }
-  const tableRows = document.querySelectorAll("tbody tr");
+  static addBook() {
+    table.innerHTML = "";
+    deleteIndex = 0;
 
-  // Применяем стили к каждой строке с анимацией transition
-  tableRows.forEach((row, index) => {
-    row.style.transition = `opacity 0.4s ${index * 0.1}s`;
-    row.style.opacity = "0";
-  });
+    for (let index = 0; index < myLibrary.length; index++) {
+      const book = myLibrary[index];
+      Book.addRow(book);
+    }
+    const tableRows = document.querySelectorAll("tbody tr");
 
-  // Задержка перед применением анимации
-  setTimeout(() => {
-    // Применяем анимацию появления для каждой строки
-    tableRows.forEach((row) => {
-      row.style.opacity = "1";
+    // Применяем стили к каждой строке с анимацией transition
+    tableRows.forEach((row, index) => {
+      row.style.transition = `opacity 0.4s ${index * 0.1}s`;
+      row.style.opacity = "0";
     });
-  }, 50);
-}
-function addRow(bookInput) {
-  const row = table.insertRow(-1);
-  const cells = Array.from({ length: 6 }, () => row.insertCell());
-  const [numberCell, titleCell, authorCell, pagesCell, readCell, deleteCell] =
-    cells; // numberCell не удалять, он нужен для нумерации строчек, которая работает через css
 
-  titleCell.textContent = bookInput.title;
-  authorCell.textContent = bookInput.author;
-  pagesCell.textContent = bookInput.pages;
-  const readBtn = createReadBtn(bookInput.read);
-  readCell.appendChild(readBtn);
+    // Задержка перед применением анимации
+    setTimeout(() => {
+      // Применяем анимацию появления для каждой строки
+      tableRows.forEach((row) => {
+        row.style.opacity = "1";
+      });
+    }, 50);
+  }
+  static addRow(bookInput) {
+    const row = table.insertRow(-1);
+    const cells = Array.from({ length: 6 }, () => row.insertCell());
+    const [numberCell, titleCell, authorCell, pagesCell, readCell, deleteCell] =
+      cells; // numberCell не удалять, он нужен для нумерации строчек, которая работает через css
 
-  const deleteBtn = createDeleteBtn(deleteIndex);
-  deleteIndex += 1;
-  deleteCell.appendChild(deleteBtn);
+    titleCell.textContent = bookInput.title;
+    authorCell.textContent = bookInput.author;
+    pagesCell.textContent = bookInput.pages;
+    const readBtn = createReadBtn(bookInput.read);
+    readCell.appendChild(readBtn);
+
+    const deleteBtn = createDeleteBtn(deleteIndex);
+    deleteIndex += 1;
+    deleteCell.appendChild(deleteBtn);
+  }
 }
 
 function createDeleteBtn(index) {
@@ -58,7 +61,7 @@ function createDeleteBtn(index) {
 
   btn.addEventListener("click", () => {
     myLibrary.splice(index, 1);
-    addBook();
+    Book.addBook();
   });
 
   return btn;
@@ -95,7 +98,7 @@ function submitForm() {
   const newBook = new Book(titleInput, authorInput, pagesInput, readInput);
   myLibrary.push(newBook);
 
-  addBook();
+  Book.addBook();
 }
 
 const table = document.querySelector("tbody");
