@@ -1,0 +1,114 @@
+[33mcommit e532aa1039675256c4f1953d8fe54982fb110d94[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;32mclass[m[33m)[m
+Author: Maxnikit <max.nikit.03@gmail.com>
+Date:   Sat Nov 25 00:41:08 2023 +0300
+
+    Improve animation and style
+
+[33mcommit e847c72cffe5f2955fbec71ab8a1ccc88fdfb7cb[m
+Author: Maxnikit <max.nikit.03@gmail.com>
+Date:   Fri Nov 24 21:56:41 2023 +0300
+
+    Change color of icons to white
+
+[33mcommit a88edb820c491caf2a71752b41f832a2f476ab70[m
+Author: Maxnikit <max.nikit.03@gmail.com>
+Date:   Fri Nov 24 21:50:56 2023 +0300
+
+    Remove arrows from input=number
+
+[33mcommit 95633e9f9091618406f0bad1ecc13c4c63376deb[m
+Author: Maxnikit <max.nikit.03@gmail.com>
+Date:   Fri Nov 24 21:05:13 2023 +0300
+
+    Add read button, add new icons
+
+[33mcommit 1fbb94c131ab6e2fac52b9156c4a97f7e88c37cd[m
+Merge: d09c410 1b3a46f
+Author: Maxnikit <max.nikit.03@gmail.com>
+Date:   Fri Nov 24 20:05:48 2023 +0300
+
+    Merge branch 'main' of github.com:Maxnikit/library
+
+[33mcommit d09c410aeba789343b992e71c8b45b5f8c7367c5[m
+Author: Maxnikit <max.nikit.03@gmail.com>
+Date:   Fri Nov 24 20:05:08 2023 +0300
+
+    Add working delete buttons
+
+[33mcommit a47f2f144df13e711f66f16c22746df602c25116[m
+Author: Maxnikit <max.nikit.03@gmail.com>
+Date:   Fri Nov 24 19:05:34 2023 +0300
+
+    Remove useless code
+
+[33mcommit 1b3a46f1286b8347df936eef4786002c5cee8b41[m
+Author: Maxim <42117027+Maxnikit@users.noreply.github.com>
+Date:   Mon Nov 20 03:21:13 2023 +0300
+
+    Update README.md
+
+[33mcommit 934d0928385a5ecdbfd582cbaa7edb062f0e43e1[m
+Author: Maxnikit <max.nikit.03@gmail.com>
+Date:   Mon Nov 20 03:16:30 2023 +0300
+
+    Add TODO
+
+[33mcommit 42bcf17f6f12aef246d4b9e55a55f4a94d0edeb7[m
+Author: Maxnikit <max.nikit.03@gmail.com>
+Date:   Mon Nov 20 03:10:49 2023 +0300
+
+    Add usage of array, add buttons
+
+[33mcommit c8d65015fa114b5ca90e8421df934c2d30063274[m
+Author: Maxnikit <max.nikit.03@gmail.com>
+Date:   Sat Nov 18 01:23:24 2023 +0300
+
+    Add TODO
+
+[33mcommit f30f2a06fb23269738d8dc03d930fbb58c9ba6ba[m
+Author: Maxnikit <max.nikit.03@gmail.com>
+Date:   Sat Nov 18 00:13:37 2023 +0300
+
+    Fix type of number input
+
+[33mcommit e69f8d78e5e7d488e286727396b54cedc116547c[m
+Author: Maxnikit <max.nikit.03@gmail.com>
+Date:   Sat Nov 18 00:12:35 2023 +0300
+
+    Remove maxlength
+
+[33mcommit 5b23d57de90e095b24bf5a96c57ac29163769af0[m
+Author: Maxnikit <max.nikit.03@gmail.com>
+Date:   Sat Nov 18 00:11:59 2023 +0300
+
+    Add form validation
+
+[33mcommit 84fde3aefd9c919aae013b0a5da9c1f6e7035460[m
+Author: Maxnikit <max.nikit.03@gmail.com>
+Date:   Fri Nov 17 01:01:59 2023 +0300
+
+    Remove TODO
+
+[33mcommit eb17d5f805596014c9d7a6459b0e912fe635b69e[m
+Author: Maxnikit <max.nikit.03@gmail.com>
+Date:   Thu Nov 16 17:32:44 2023 +0300
+
+    Add numeration of the table
+
+[33mcommit 2dcf6550403d37bb352152063a5e25bf49dbaff5[m
+Author: Maxnikit <max.nikit.03@gmail.com>
+Date:   Wed Nov 15 23:06:15 2023 +0300
+
+    Add form
+
+[33mcommit 7b3e2adb1436df22f4a636ac6fe14cb8f03ba440[m
+Author: Maxnikit <max.nikit.03@gmail.com>
+Date:   Tue Nov 14 21:46:27 2023 +0300
+
+    Initial commit
+
+[33mcommit 2847f9a9afcaca5784f99c8c97480179a3c47cbb[m
+Author: Maxim <42117027+Maxnikit@users.noreply.github.com>
+Date:   Tue Nov 14 21:17:49 2023 +0300
+
+    Initial commit
